@@ -13,7 +13,7 @@ import {
     <h3>Current font size <pre>{{fontSize}}</pre></h3>
     <span>should have ellipsis <pre>{{ellipsis}}</pre></span>
     <div class="container" [ngStyle]="{'font-size.px': fontSize}">
-      <div #row *ngFor="let id of entries">{{ id }}</div>
+      <div #row *ngFor="let entry of entries">{{ entry }}</div>
     </div>
   `,
   styles: [
