@@ -13,7 +13,7 @@ import {
     <h3>Current font size <pre>{{fontSize}}</pre></h3>
     <span>should have ellipsis <pre>{{ellipsis}}</pre></span>
     <div class="container" [ngStyle]="{'font-size.px': fontSize}">
-      <div #row *ngFor="let id of ids">{{ id }}</div>
+      <div #row *ngFor="let id of entries">{{ id }}</div>
     </div>
   `,
   styles: [
@@ -31,7 +31,7 @@ import {
 export class BoxComponent implements AfterViewInit {
   @ViewChildren('row') private rows!: QueryList<ElementRef>;
   ellipsis = false;
-  ids = 'ID 000 000011, ID 0001 111111, ID 0001111'.split(','); // Example data
+  entries = 'ID 000 000011, ID 0001 111111, ID 0001111'.split(','); // Example data
   private _fontSize = 16; // Default font size
 
   constructor(private renderer: Renderer2) {}
